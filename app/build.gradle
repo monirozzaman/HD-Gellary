@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.itvillagerr.cameraroll"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 2
+        versionName "1.3.2"
+    }
+    buildTypes {
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions{
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:21.0.+'
+    implementation 'com.android.support:cardview-v7:21.0.+'
+    implementation 'com.android.support:recyclerview-v7:21.0.+'
+    implementation 'com.melnykov:floatingactionbutton:1.1.0'
+    implementation 'com.jpardogo.materialtabstrip:library:1.0.6'
+    implementation 'com.google.android.gms:play-services-ads:17.1.1'
+    implementation 'com.android.support:support-annotations:28.0.0-rc01'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.9.0'
+    // using an older Version because I still want to use the ImageView
+    //noinspection GradleDependency
+    compile 'com.github.chrisbanes:PhotoView:1.3.1'
+    compile 'com.github.MFlisar:DragSelectRecyclerView:0.3'
+    implementation 'com.google.android.exoplayer:exoplayer:r2.5.2'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.1'
+    compile 'com.github.pluscubed:recycler-fast-scroll:0.3.2@aar'
+}
